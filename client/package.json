@@ -1,0 +1,20 @@
+{
+  "name": "grpc-poc-client",
+  "version": "0.0.1",
+  "scripts": {
+    "proto:generate": "rimraf ./proto-generated-files/* && grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto-generated-files --grpc_out=./proto-generated-files --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_opt=outputServices=grpc-js,env=node,useOptionals=messages,exportCommonSymbols=false,esModuleInterop=true --ts_proto_out=./proto-generated-files ./handshake.proto",
+    "proto:watch": "chokidar \"**/*.proto\" -c \"npm run proto:generate\"",
+    "dev": "ts-node-dev ./index.ts"
+  },
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "grpc-tools": "^1.12.4",
+    "rimraf": "^5.0.5",
+    "ts-node-dev": "^2.0.0",
+    "ts-proto": "^1.167.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.14"
+  }
+}

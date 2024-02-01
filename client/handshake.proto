@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package monika;
+
+message HandshakeRequest {
+  string city = 1;
+  string country = 2;
+  string hostname = 3;
+  string isp = 4;
+  optional string locationId = 5;
+  string macAddress = 6;
+  optional string monikaId = 7;
+  string os = 8;
+  int32 pid = 9;
+  string privateIp = 10;
+  string publicIp = 11;
+  string version = 12;
+}
+
+message HandshakeResponse {
+  string id = 1;
+}
+
+service Monika {
+  rpc Handshake(HandshakeRequest) returns (HandshakeResponse) {}
+}
