@@ -19,7 +19,7 @@ This is a sample implementation of gRPC running on Node.js and written in TypeSc
 
 ### Run the Server
 
-1. Change to the server directory. Run `cd ./server.
+1. Change to the server directory. Run `cd ./server`.
 2. Install the dependencies. Run `npm ci`.
 3. Compile the proto file. Run `npm run proto:generate`.
 4. Run the server. Run `npm run dev`.
